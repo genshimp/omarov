@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6816dd194.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main center">
+        <div class="box center">
+            <img data-aos="fade-down" src="ava.jpg" alt="">
+            <div data-aos="fade-up">
+                <p class="user_name">Omarov Max</p>
+                <p class="skill">Web developer</p>
+            </div>
+            <div class="arr_container center ">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="left_container off">
+                <p>Skills<hr></p>
+                
+                <div class="skills">
+                    <div>HTML</div>
+                    <div>CSS</div>
+                    <div>JavaScript</div>
+                    <div>React</div>
+                    <div>Git</div>
+                    <div>Node</div>
+                </div>
+                
+                <div class="icons"> 
+                    <p>Contacts</p>                  
+                    <a href="https://vk.com/odmen"><i class="fab fa-vk"></i></a>
+                    <a href="https://www.instagram.com/omarov.max"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/bumago"><i class="fab fa-telegram"></i></a>
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="cancel center">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const clc = document.querySelector(".cancel");
+        const arr = document.querySelector(".arr_container");
+        const left_container = document.querySelector(".left_container");
+        const skills = document.querySelector(".skills");
+        const contacts = document.querySelector(".icons");
+        arr.addEventListener("click", ()=>{
+            arr.classList.add("active_arr");
+            if(left_container.classList.contains("off")){
+                left_container.classList.remove("off");
+                left_container.classList.add("active");
+            }
+        });
+
+        clc.addEventListener("click", ()=>{
+            arr.classList.remove("active_arr");
+            if(left_container.classList.contains("active")){
+                left_container.classList.remove("active");
+                left_container.classList.add("off");
+            }
+        });
+    </script>
+    
+    <script>
+       function aosGo() {
+           AOS.init({
+    // Global settings:
+    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+    initClassName: 'aos-init', // class applied after initialization
+    animatedClassName: 'aos-animate', // class applied on animation
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    
+  
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 50, // values from 0 to 3000, with step 50ms
+    duration: 400, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+  
+  });
+       } 
+       aosGo();
+    </script>
+</body>
+</html>
